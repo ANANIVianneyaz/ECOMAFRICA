@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stratégie E-commerce pour l'Afrique</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffcc80, #ff9800);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #e64a19;
+            border-bottom: 2px solid #ff9800;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #ff9800;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Profil Section */
+        .profile {
+            background: rgba(51, 51, 51, 0.9);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 20px auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-info {
+            text-align: center;
+        }
+
+        .profile-slogan {
+            font-size: 1.2em;
+            font-style: italic;
+            color: #f7d794;
+            margin-top: 20px;
+            line-height: 1.4;
+        }
+
+        /* Strategy Section */
+        .strategy-section {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding-bottom: 20px;
+            background: rgba(51, 51, 51, 0.9);
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .strategy-card {
+            flex: 0 0 300px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+            color: #333; /* Rendre le texte visible */
+        }
+
+        .strategy-card:hover {
+            transform: scale(1.05);
+        }
+
+        .strategy-card h3 {
+            color: #ff5722;
+        }
+
+        /* Arrows for scrolling */
+        .scroll-arrows {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .scroll-arrows button {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Product Collection */
+        .product-collection {
+            background: rgba(51, 51, 51, 0.9);
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .product-item {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 15px 30px;
+            margin: 10px;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+            min-width: 200px;
+            text-decoration: none;
+        }
+
+        .product-item:hover {
+            transform: scale(1.1);
+            background: rgba(255, 153, 0, 0.9);
+            color: white;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="profile">
+            <img src="vianney.png" alt="ANANI Vianney">
+            <div class="profile-info">
+                <h2 style="color: white;">ANANI Vianney</h2>
+                <div class="profile-slogan">
+                    Mon objectif : générer de l'argent à chaque instant. Je suis déterminé à exploiter chaque opportunité, à tester et lancer un maximum de produits sans attendre. La rapidité est ma force, la polyvalence ma stratégie. Je n’ai pas peur de prendre des risques, car tant qu’il y a des problèmes, il y a de l’argent à se faire. Aucun obstacle n’est trop grand, chaque défi est une chance de plus.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 style="color: #ff9800; text-align: center;">🚀 Stratégie E-commerce pour l'Afrique 🌍</h2>
+            <div class="strategy-section">
+                <div class="strategy-card" onclick="openModal('criteria')">
+                    <h3>Critères d'un Produit Gagnant en Afrique :</h3>
+                    <ul>
+                        <li>Faible coût d'achat</li>
+                        <li>Produit de qualité</li>
+                        <li>Produit résolvant un problème</li>
+                        <li>Forte valeur perçue</li>
+                        <li>Effet de nouveauté sur le marché</li>
+                    </ul>
+                </div>
+                <div class="strategy-card" onclick="openModal('salesStrategy')">
+                    <h3>🔥 Stratégie de vente pour maximiser les profits</h3>
+                    <ul>
+                        <li>Vente en urgence : Proposer une réduction limitée ("Offre valable 24h !")</li>
+                        <li>Avant/Après percutants : Mettre en avant des transformations visuelles rapides</li>
+                        <li>Publicités ciblées : Facebook Ads, TikTok Ads avec des visuels impactants</li>
+                        <li>Création d’autorité : Se faire passer pour un expert sur le produit</li>
+                        <li>Service supplémentaire : Offrir une installation gratuite</li>
+                    </ul>
+                </div>
+                <div class="strategy-card" onclick="openModal('generalTips')">
+                    <h3>💡 Conseils généraux pour réussir sur le marché africain</h3>
+                    <ul>
+                        <li>Prix abordable : Propose des prix accessibles tout en conservant une bonne qualité.</li>
+                        <li>Livraison rapide et sûre : Offrir une livraison rapide.</li>
+                        <li>Accompagnement personnalisé : Offrir des conseils d'utilisation ou une ligne d’assistance.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="scroll-arrows">
+                <button onclick="scrollLeft()">⬅️</button>
+                <button onclick="scrollRight()">➡️</button>
+            </div>
+        </section>
+
+        <section class="product-collection">
+            <h2 style="color: white; text-align: center;">Ma collection de problème</h2>
+            <div style="text-align: center;">
+                <span class="product-item" onclick="openModal('weightManagement')">Prise de poids (Gagner ou perdre du poids)</span>
+                <span class="product-item" onclick="openModal('drySkin')">Peau sèche et inconfort cutané</span>
+                <span class="product-item" onclick="openModal('insomnia')">Manque de sommeil et insomnie</span>
+                <span class="product-item" onclick="openModal('officeWorkers')">Ceux qui travaillent devant un ordi toute la journée</span>
+                <span class="product-item" onclick="openModal('carOwners')">Ceux qui ont une voiture</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 - Stratégie E-commerce pour l'Afrique</p>
+    </footer>
+
+    <script>
+        function openModal(contentId) {
+            const modal = document.getElementById('myModal');
+            const modalContent = document.getElementById('modalContent');
+
+            let content = '';
+            switch (contentId) {
+                case 'criteria':
+                    content = `
+                        <h3 style="color: #ff5722;">Critères d'un Produit Gagnant en Afrique :</h3>
+                        <ul>
+                            <li>Faible coût d'achat</li>
+                            <li>Produit de qualité</li>
+                            <li>Produit résolvant un problème</li>
+                            <li>Forte valeur perçue</li>
+                            <li>Effet de nouveauté sur le marché</li>
+                        </ul>
+                    `;
+                    break;
+                case 'salesStrategy':
+                    content = `
+                        <h3 style="color: #ff5722;">🔥 Stratégie de vente pour maximiser les profits</h3>
+                        <ul>
+                            <li>Vente en urgence : Proposer une réduction limitée ("Offre valable 24h !")</li>
+                            <li>Avant/Après percutants : Mettre en avant des transformations visuelles rapides</li>
+                            <li>Publicités ciblées : Facebook Ads, TikTok Ads avec des visuels impactants</li>
+                            <li>Création d’autorité : Se faire passer pour un expert sur le produit</li>
+                            <li>Service supplémentaire : Offrir une installation gratuite</li>
+                        </ul>
+                    `;
+                    break;
+                case 'generalTips':
+                    content = `
+                        <h3 style="color: #ff5722;">💡 Conseils généraux pour réussir sur le marché africain</h3>
+                        <ul>
+                            <li>Prix abordable : Propose des prix accessibles tout en conservant une bonne qualité.</li>
+                            <li>Livraison rapide et sûre : Offrir une livraison rapide.</li>
+                            <li>Accompagnement personnalisé : Offrir des conseils d'utilisation ou une ligne d’assistance.</li>
+                        </ul>
+                    `;
+                    break;
+                case 'weightManagement':
+                    content = `
+                        <h3 style="color: #ff5722;">Prise de poids (Gagner ou perdre du poids)</h3>
+                        <ul>
+                            <li>Ceinture de sudation + crèmes amincissantes</li>
+                            <li>Thé ou compléments brûle-graisse</li>
+                            <li>Poudre hyperprotéinée pour prise de masse</li>
+                            <li>Shorts et leggings de sudation</li>
+                            <li>Pèse-personnes connectés</li>
+                        </ul>
+                    `;
+                    break;
+                case 'drySkin':
+                    content = `
+                        <h3 style="color: #ff5722;">Peau sèche et inconfort cutané</h3>
+                        <ul>
+                            <li>Crèmes hydratantes ultra-nourrissantes</li>
+                            <li>Huiles corporelles</li>
+                            <li>Lotions anti-démangeaison</li>
+                        </ul>
+                    `;
+                    break;
+                case 'insomnia':
+                    content = `
+                        <h3 style="color: #ff5722;">Manque de sommeil et insomnie</h3>
+                        <ul>
+                            <li>Masques de sommeil</li>
+                            <li>Huiles essentielles de relaxation</li>
+                            <li>Ecouteurs anti-bruit</li>
+                            <li>Oreillers ergonomiques</li>
+                        </ul>
+                    `;
+                    break;
+                case 'officeWorkers':
+                    content = `
+                        <h3 style="color: #ff5722;">Ceux qui travaillent devant un ordi toute la journée</h3>
+                        <ul>
+                            <li>Lunettes anti-lumière bleue</li>
+                            <li>Correcteurs de posture pour chaise</li>
+                            <li>Repose-pieds ergonomiques</li>
+                            <li>Claviers et souris ergonomiques</li>
+                            <li>Sièges de bureau ultra-confort</li>
+                        </ul>
+                    `;
+                    break;
+                case 'carOwners':
+                    content = `
+                        <h3 style="color: #ff5722;">Ceux qui ont une voiture</h3>
+                        <ul>
+                            <li>Purificateurs et désodorisants puissants</li>
+                            <li>Aspirateurs portables pour voiture</li>
+                            <li>Tapis anti-sable et anti-poussière</li>
+                            <li>Tuyaux d’arrosage extensibles pour lavage auto</li>
+                            <li>Machines de nettoyage vapeur pour intérieur de voiture</li>
+                        </ul>
+                    `;
+                    break;
+            }
+
+            modalContent.innerHTML = content;
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('myModal');
+            modal.style.display = "none";
+        }
+
+        function scrollLeft() {
+            const strategySection = document.querySelector('.strategy-section');
+            strategySection.scrollBy({ left: -300, behavior: 'smooth' });
+        }
+
+        function scrollRight() {
+            const strategySection = document.querySelector('.strategy-section');
+            strategySection.scrollBy({ left: 300, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
